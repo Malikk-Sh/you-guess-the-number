@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css">
+   <script src="script.js" defer></script>
+   <title>Make a number</title>
+</head>
+
+<body class="active-settings">
+   <div class="wrapper">
+      <div class="content">
+         <div class="header">
+            <div class="settings">
+               <span class="settings-img">
+                  <img src="settings.png" alt="Settings">
+               </span>
+               <div class="settings-bg"></div>
+               <div class="settings-block">
+                  <section class="settings-language">
+                     <h2 id="text-0" class="text">Поменять язык:</h2>
+                     <select class="change-language">
+                        <option value="0">English</option>
+                        <option selected value="1">Русский</option>
+                     </select>
+                  </section>
+                  <hr>
+                  <section class="settings-numbers_gap">
+                     <h2 id="text-11" class="text">Установить промежуток между числами:</h2>
+                     <p class="gap-size">10</p>
+                     <input class="numbers-gap" type="range" min="1" max="3" step="1" value="1">
+                  </section>
+               </div>
+            </div>
+         </div>
+         <div class="block block-1">
+            <h3 id="text-1" class="text">Загадай число от 1 до 10, а я попробую отгадать</h3>
+            <div class="ready-block">
+               <p id="text-2" class="ready-btn text">Готово</p>
+               <span id="text-3" class="check-ready-btn text">Нажмите когда вы будете готовы и загадали число</span>
+            </div>
+         </div>
+         <div class="block block-2">
+            <h3 class="guess-block">
+               <span id="text-4" class="text">Вы загадали число </span><span class="guess">6</span>?
+            </h3>
+            <div class="answer-btns">
+               <span class="answer-btn text less">&#60;<span id="text-5">меньше</span></span>
+               <span class="answer-btn text correct"><span id="text-6">Да!</span></span>
+               <span class="answer-btn text more"><span id="text-7">больше</span>&#62;</span>
+            </div>
+         </div>
+         <div class="block block-3">
+            <p class="correctNum-block">
+               <span id="text-8" class="text">Вы загадали </span><span class="correctNum"></span>!
+            </p>
+            <p class="attempts-block">
+               <span id="text-9" class="text">Мне потребовалось попыток: </span><span class="attempts">5</span>
+            </p>
+            <p class="again-block">
+               <span id="text-10" class="text">Ещё раз </span><span>↺</spa♦n>
+            </p>
+         </div>
+      </div>
+   </div>
+</body>
+
+</html>
