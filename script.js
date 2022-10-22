@@ -4,14 +4,16 @@ let translateText = document.querySelectorAll('.text')
 settings.onclick = function () {
    body.classList.add('active-settings')
 }
-document.addEventListener('click', (e) => {
+document.addEventListener('click', func_shoWsettings)
+document.addEventListener('touchend', func_shoWsettings)
+function func_shoWsettings(e) {
    if (e.target.classList.contains('settings-bg')) {
       body.classList.remove('active-settings')
    };
-})
+}
 let language
 let change_language = document.querySelector('.change-language');
-change_language.addEventListener('input', func_)
+change_language.addEventListener('input', func_changeLanguage)
 
 let numbers_gap = document.querySelector('.numbers-gap')
 let gap_size = document.querySelector('.gap-size')
@@ -26,9 +28,9 @@ numbers_gap.onchange = function() {
       this.style.background = "#c00"
       gap_size.innerHTML = 1000
    }
-   func_()
+   func_changeLanguage()
 }
-function func_() {
+function func_changeLanguage() {
    console.log('jjj');
    language = Number(change_language.value)
    let languages = [
@@ -45,7 +47,9 @@ let block_1 = document.querySelector('.block-1')
 let block_2 = document.querySelector('.block-2')
 let block_3 = document.querySelector('.block-3')
 let ready_btn = document.querySelector('.ready-btn')
-ready_btn.onclick = () => {
+ready_btn.addEventListener('click', func_ready)
+ready_btn.addEventListener('touchend', func_ready)
+function func_ready() {
    block_1.style.display = "none"
    block_2.style.display = "block"
    maxNum = gap_size.innerHTML
@@ -68,7 +72,21 @@ let attempts = 1
 let guessNum = randInt(minNum, maxNum)
 guess.innerHTML = guessNum
 
-less.onclick = () => {
+less.addEventListener('click', func_less)
+less.addEventListener('touchend', func_less)
+
+more.addEventListener('click', func_more)
+more.addEventListener('touchend', func_more)
+
+correct.addEventListener('click', func_correct)
+correct.addEventListener('touchend', func_correct)
+
+let again_btn = document.querySelector('.again-block')
+
+again_btn.addEventListener('click', func_again)
+again_btn.addEventListener('touchend', func_again)
+
+function func_less() {
    if (maxNum == minNum) return
    attempts++
    maxNum = guessNum - 1
@@ -76,7 +94,7 @@ less.onclick = () => {
    guess.innerHTML = guessNum
    console.log(guessNum);
 }
-more.onclick = () => {
+function func_more() {
    if (maxNum <= minNum || guessNum >= maxNum) return
    attempts++
    minNum = guessNum + 1
@@ -84,16 +102,15 @@ more.onclick = () => {
    guess.innerHTML = guessNum
    console.log(guessNum);
 }
-correct.onclick = () => {
+function func_correct() {
    document.querySelector('.correctNum').innerHTML = guessNum
    document.querySelector('.attempts').innerHTML = attempts
    block_2.style.display = "none"
    block_3.style.display = "block"
 }
 
-let again_btn = document.querySelector('.again-block')
 
-again_btn.onclick = () => {
+function func_again() {
    maxNum = gap_size.innerHTML
    minNum = 1
    attempts = 1
