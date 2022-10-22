@@ -5,7 +5,7 @@ settings.onclick = function () {
    body.classList.add('active-settings')
 }
 document.addEventListener('click', func_shoWsettings)
-document.addEventListener('touchend', func_shoWsettings)
+
 function func_shoWsettings(e) {
    if (e.target.classList.contains('settings-bg')) {
       body.classList.remove('active-settings')
@@ -17,14 +17,14 @@ change_language.addEventListener('input', func_changeLanguage)
 
 let numbers_gap = document.querySelector('.numbers-gap')
 let gap_size = document.querySelector('.gap-size')
-numbers_gap.onchange = function() {
+numbers_gap.onchange = function () {
    if (this.value == 1) {
       this.style.background = "#0c0"
       gap_size.innerHTML = 10
-   } else if (this.value == 2){
+   } else if (this.value == 2) {
       this.style.background = "#cc0"
       gap_size.innerHTML = 100
-   } else if (this.value == 3){
+   } else if (this.value == 3) {
       this.style.background = "#c00"
       gap_size.innerHTML = 1000
    }
@@ -48,7 +48,6 @@ let block_2 = document.querySelector('.block-2')
 let block_3 = document.querySelector('.block-3')
 let ready_btn = document.querySelector('.ready-btn')
 ready_btn.addEventListener('click', func_ready)
-ready_btn.addEventListener('touchend', func_ready)
 function func_ready() {
    block_1.style.display = "none"
    block_2.style.display = "block"
@@ -73,18 +72,14 @@ let guessNum = randInt(minNum, maxNum)
 guess.innerHTML = guessNum
 
 less.addEventListener('click', func_less)
-less.addEventListener('touchend', func_less)
 
 more.addEventListener('click', func_more)
-more.addEventListener('touchend', func_more)
 
 correct.addEventListener('click', func_correct)
-correct.addEventListener('touchend', func_correct)
 
 let again_btn = document.querySelector('.again-block')
 
 again_btn.addEventListener('click', func_again)
-again_btn.addEventListener('touchend', func_again)
 
 function func_less() {
    if (maxNum == minNum) return
@@ -116,7 +111,6 @@ function func_again() {
    attempts = 1
    guessNum = randInt(minNum, maxNum)
    guess.innerHTML = guessNum
-   console.log(guessNum);
    block_1.style.display = "block"
    block_2.style.display = "none"
    block_3.style.display = "none"
